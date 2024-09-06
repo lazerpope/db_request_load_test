@@ -1,0 +1,25 @@
+<style>
+  body {
+    background-color: black;
+    color: white;
+  }
+  p {
+    font-size: 8px;
+  }
+</style>
+
+<body>
+  {% load post_tags %}
+
+  {% get_all_posts_with_comments as posts %}
+
+  {% for post in posts %}
+    <h3>{{ post.title }}</h3>
+
+    {% for comment in post.comments.all %}
+      <p>{{ comment.content }}</p>
+      
+    {% endfor %}
+    
+  {% endfor %}
+</body>

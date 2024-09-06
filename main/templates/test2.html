@@ -1,0 +1,22 @@
+<style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    p{
+      font-size: 8px;
+    }
+  </style>
+  <body>
+    {% for post in posts %}
+     <h3>
+       {{ post.title }}
+  
+     </h3> 
+      {% for comment in post.test_get_comments %}
+      <p>
+        {{ comment.content }}  
+      </p> 
+      {% endfor %}
+    {% endfor %}
+  </body>
